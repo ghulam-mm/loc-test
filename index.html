@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo-fence Coupon App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="app.js" defer></script>
+    <style>
+        #map {
+            height: 400px;
+        }
+        #loader {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Geo-fence Coupon App</h1>
+        <button id="start-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Start
+        </button>
+        <label for="your-location"  id="your-location" class="block mt-4"></label>
+        <!-- <label id="your-location"> -->
+        <div id="loader" class="mt-4 flex justify-center">
+            <img src="loader.gif" alt="Loading..." />
+        </div>
+        <div id="timer" class="mt-4 text-lg font-bold hidden">Time Remaining: <span id="time">00:10</span></div>
+        <div id="map" class="mt-4"></div>
+        <div id="coupon" class="hidden mt-4 p-4 bg-green-500 text-white font-bold rounded">
+            Congratulations! You have earned a special coupon! SALE50
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+</body>
+
+</html>
