@@ -79,7 +79,6 @@ function startTimer() {
 
 
         if (timeRemaining <= 0) {
-            const geoFenceRadius = 80
             clearInterval(timerInterval);
             navigator.geolocation.getCurrentPosition((position) => {
                 const userLat = position.coords.latitude;
@@ -87,6 +86,7 @@ function startTimer() {
             const distance = calculateDistance(userLat, userLng, geoFenceCenter[0], geoFenceCenter[1]);
             console.log(distance);
             if (distance <= geoFenceRadius) {
+                console.log(distance);
                 if (timeRemaining <= 0) {
                 document.getElementById('coupon').classList.remove('hidden');}
             } else {
